@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Chat App</title>
+</head>
+<body>
+  <div>
+    <video id="local" autoplay muted playsinline></video>
+    <video id="remote" autoplay playsinline></video>
+  </div>
+
+  <input id="msg" placeholder="Type message..." />
+  <button onclick="sendMessage()">Send</button>
+  <ul id="chat"></ul>
+
+  <button onclick="startCall()">📞 Call</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
