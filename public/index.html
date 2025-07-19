@@ -1,21 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Video Chat App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    video {
+      width: 300px;
+      height: 220px;
+      margin: 10px;
+      border: 2px solid black;
+    }
+    #chat-box {
+      max-height: 200px;
+      overflow-y: scroll;
+      border: 1px solid #aaa;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <div>
-    <video id="local" autoplay muted playsinline></video>
-    <video id="remote" autoplay playsinline></video>
-  </div>
+  <h2>Video Chat App</h2>
 
-  <input id="msg" placeholder="Type message..." />
+  <video id="local" autoplay muted playsinline></video>
+  <video id="remote" autoplay playsinline></video>
+
+  <br />
+  <button onclick="startCall()">📞 Start Video Call</button>
+
+  <h3>Chat</h3>
+  <input id="msg" placeholder="Type a message" />
   <button onclick="sendMessage()">Send</button>
-  <ul id="chat"></ul>
+  <div id="chat-box"></div>
 
-  <button onclick="startCall()">📞 Call</button>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
